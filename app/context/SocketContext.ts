@@ -1,17 +1,30 @@
-import React, { createContext, useContext } from 'react';
+"use client"; // Required for Client Components in Next.js
 
-// Create Socket Context and Provider component.
+import React, { createContext, useContext, ReactNode } from "react";
 
-const SocketContext = createContext(null);
-
-export const SocketProvider = ({ children }) => {
-   // Socket state and methods here.
-
-   return (
-       <SocketContext.Provider value={{ /* socket state and methods */ }}>
-           {children}
-       </SocketContext.Provider>
-   );
+// Define the context type
+type SocketContextType = {
+  // Define expected socket-related state and methods
 };
 
+const SocketContext = createContext<SocketContextType | null>(null);
+
+interface SocketProviderProps {
+  children: ReactNode;
+}
+
+export const SocketProvider: React.FC<SocketProviderProps> = ({ children }) => {
+  // Define socket state and functions properly
+  const socketValue: SocketContextType = {
+    // Example state/methods
+  };
+
+  return (
+    <SocketContext.Provider value={socketValue}>
+      {children}
+    </SocketContext.Provider>
+  );
+};
+
+// Custom hook to use the socket context
 export const useSocket = () => useContext(SocketContext);
