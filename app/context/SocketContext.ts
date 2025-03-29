@@ -1,4 +1,4 @@
-"use client"; // Required for Client Components in Next.js
+"use client"; 
 
 import React, { createContext, useContext, ReactNode } from "react";
 
