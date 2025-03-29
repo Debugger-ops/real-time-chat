@@ -5,7 +5,7 @@ const HomePage = () => {
   return (
     <div className="container">
       <header className="header">
-        <h1 className="title">ChatterBox</h1>
+        <h1 className="title">SphereCall</h1>
         <p className="subtitle">Connect and chat in real-time with friends and colleagues</p>
       </header>
 
