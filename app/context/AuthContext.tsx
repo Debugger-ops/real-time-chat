@@ -1,11 +1,11 @@
-"use client"
-
+"use client";
 import { createContext, useState, ReactNode, useContext } from "react";
 
 interface AuthContextType {
   isAuthenticated: boolean;
   login: (email: string, password: string) => Promise<void>;
   logout: () => void;
+  register: (email: string, password: string) => Promise<void>; // ✅ Add register function
 }
 
 const AuthContext = createContext<AuthContextType | null>(null);
@@ -15,15 +15,20 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const login = async (email: string, password: string) => {
     console.log("Logging in with:", email, password);
-    // Here you would make an API request for authentication
-    // Example: const response = await fetch('/api/login', { method: 'POST', body: JSON.stringify({ email, password }) });
+    // Simulate login (replace with API call)
     setIsAuthenticated(true);
   };
 
   const logout = () => setIsAuthenticated(false);
 
+  const register = async (email: string, password: string) => {
+    console.log("Registering user:", email);
+    // Simulate registration (replace with API call)
+    setIsAuthenticated(true);
+  };
+
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, login, logout, register }}>
       {children}
     </AuthContext.Provider>
   );
