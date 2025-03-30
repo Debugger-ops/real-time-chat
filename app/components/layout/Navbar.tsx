@@ -3,9 +3,9 @@ import Link from 'next/link';
 
 const Navbar = () => (
     <nav>
-        <Link href="/(auth)/login/page">Login</Link>
-        <Link href="/(auth)/register/page">Register</Link>
-        <Link href="/(protected)/dashboard/page">Dashboard</Link>
+        <Link href="/login">Login</Link>
+        <Link href="/register">Register</Link>
+        <Link href="/dashboard">Dashboard</Link>
     </nav>
 );
 
